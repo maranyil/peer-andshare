@@ -120,9 +120,9 @@ const Room = (props) => {
     };
 
     return (
-        <div>
-            <video autoPlay ref={userVideo} />
-            <video autoPlay ref={partnerVideo} />
+        <div className="Room">
+            <video className="MyVid" autoPlay ref={userVideo} />
+            <video className="YourVid" autoPlay ref={partnerVideo} />
         </div>
     );
 };

@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Recursive&display=swap");
+body {
+  margin: 0;
+  font-family: 'Recursive', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.App {
+  text-align: center;
+  background-color: #282c34;
+  width: 100vw;
+  height: 100vh;
+}
+
+.App button {
+  margin-top: 3vh;
+  outline: 0;
+  color: #4C3999;
+  font-size: 1.2em;
+  font-weight: 600;
+  background: #f1f1f1;
+  border: none;
+  padding: 2em 4em;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+  -webkit-box-shadow: inset 0 -8px 0 0 rgba(0, 0, 0, 0.2), 1px 1px 0 0 #4C3999, 2px 2px 0 0 #4C3999, 3px 3px 0 0 #4C3999, 4px 4px 0 0 #4C3999, 5px 5px 0 0 #4C3999, 6px 6px 0 0 #4C3999, 7px 7px 0 0 #4C3999, 8px 8px 0 0 #4C3999, 9px 9px 0 0 #4C3999, 10px 10px 0 0 #4C3999, 11px 11px 0 0 #4C3999, 12px 12px 0 0 #4C3999;
+          box-shadow: inset 0 -8px 0 0 rgba(0, 0, 0, 0.2), 1px 1px 0 0 #4C3999, 2px 2px 0 0 #4C3999, 3px 3px 0 0 #4C3999, 4px 4px 0 0 #4C3999, 5px 5px 0 0 #4C3999, 6px 6px 0 0 #4C3999, 7px 7px 0 0 #4C3999, 8px 8px 0 0 #4C3999, 9px 9px 0 0 #4C3999, 10px 10px 0 0 #4C3999, 11px 11px 0 0 #4C3999, 12px 12px 0 0 #4C3999;
+}
+
+.App button:hover {
+  color: #1DA7A8;
+}
+
+.App button:active {
+  color: #222;
+  -webkit-box-shadow: inset 0 -4px 0 0 rgba(0, 0, 0, 0.2), 1px 1px 0 0 #4C3999, 2px 2px 0 0 #4C3999, 3px 3px 0 0 #4C3999, 4px 4px 0 0 #4C3999, 5px 5px 0 0 #4C3999;
+          box-shadow: inset 0 -4px 0 0 rgba(0, 0, 0, 0.2), 1px 1px 0 0 #4C3999, 2px 2px 0 0 #4C3999, 3px 3px 0 0 #4C3999, 4px 4px 0 0 #4C3999, 5px 5px 0 0 #4C3999;
+}
+
+.App-header {
+  margin-top: 0px;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.App h2 {
+  margin-top: 0;
+  display: block;
+  padding-top: 20vh;
+  color: #f1f1f1;
+  font-size: 24px;
+}
+
+.Room {
+  padding-top: 3vh;
+  width: 90vw;
+  margin-right: auto;
+}
+
+.MyVid {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+  width: 50vh;
+  height: 50vw;
+  border-radius: 5px;
+}
+/*# sourceMappingURL=Styles.css.map */
