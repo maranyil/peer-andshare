@@ -1,6 +1,6 @@
 $primary-color: #282c34;
-$secondary-color: #4C3999;
-$third-color: #1DA7A8;
+$secondary-color: #4c3999;
+$third-color: #1da7a8;
 $white: #f1f1f1;
 
 .App {
@@ -12,37 +12,29 @@ $white: #f1f1f1;
 
 .App button {
   margin-top: 3vh;
-  outline:0; 
+  outline: 0;
   color: $secondary-color;
-  font-size:1.2em;
-  font-weight:600;
+  font-size: 1.2em;
+  font-weight: 600;
   background: $white;
-  border:none;
-  padding:2em 4em;
-  transition:all .3s ease-out; 
-  box-shadow:inset 0 -8px 0 0 rgba(0,0,0,.2),
-  1px 1px 0 0 $secondary-color,
-  2px 2px 0 0 $secondary-color,
-  3px 3px 0 0 $secondary-color,
-  4px 4px 0 0 $secondary-color,
-  5px 5px 0 0 $secondary-color,
-  6px 6px 0 0 $secondary-color,
-  7px 7px 0 0 $secondary-color,
-  8px 8px 0 0 $secondary-color,
-  9px 9px 0 0 $secondary-color,
-  10px 10px 0 0 $secondary-color,
-  11px 11px 0 0 $secondary-color,
-  12px 12px 0 0 $secondary-color;
+  border: none;
+  padding: 2em 4em;
+  transition: all 0.3s ease-out;
+  box-shadow: inset 0 -8px 0 0 rgba(0, 0, 0, 0.2), 1px 1px 0 0 $secondary-color,
+    2px 2px 0 0 $secondary-color, 3px 3px 0 0 $secondary-color,
+    4px 4px 0 0 $secondary-color, 5px 5px 0 0 $secondary-color,
+    6px 6px 0 0 $secondary-color, 7px 7px 0 0 $secondary-color,
+    8px 8px 0 0 $secondary-color, 9px 9px 0 0 $secondary-color,
+    10px 10px 0 0 $secondary-color, 11px 11px 0 0 $secondary-color,
+    12px 12px 0 0 $secondary-color;
   &:hover {
-    color: $third-color
+    color: $third-color;
   }
   &:active {
-    color:#222;
-    box-shadow:inset 0 -4px 0 0 rgba(0,0,0,.2),
-      1px 1px 0 0 $secondary-color,
-      2px 2px 0 0 $secondary-color,
-      3px 3px 0 0 $secondary-color,
-      4px 4px 0 0 $secondary-color,
+    color: #222;
+    box-shadow: inset 0 -4px 0 0 rgba(0, 0, 0, 0.2),
+      1px 1px 0 0 $secondary-color, 2px 2px 0 0 $secondary-color,
+      3px 3px 0 0 $secondary-color, 4px 4px 0 0 $secondary-color,
       5px 5px 0 0 $secondary-color;
   }
 }
@@ -60,8 +52,13 @@ $white: #f1f1f1;
 .App h2 {
   margin-top: 0;
   display: block;
-  padding-top: 20vh;
+  padding-top: 7vh;
   color: $white;
   font-size: 24px;
 }
 
+.Create img {
+  border-radius: 5px;
+  height: 130px;
+  margin: 15vh 0 0 10px;
+}
