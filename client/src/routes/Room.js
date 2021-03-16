@@ -11,14 +11,16 @@ const Room = (props) => {
   const userStream = useRef();
 
   const history = useHistory();
-  const stream = useState();
+  const [stream, setStream] = useState();
   const [audioMuted, setAudioMuted] = useState(false);
   const [videoMuted, setVideoMuted] = useState(false);
+  const [fullScreen, setFullScreen] = useState(false);
 
   useEffect(() => {
     navigator.mediaDevices
       .getUserMedia({ audio: true, video: true })
       .then((stream) => {
+          setStream(stream);
         userVideo.current.srcObject = stream;
         userStream.current = stream;
 
