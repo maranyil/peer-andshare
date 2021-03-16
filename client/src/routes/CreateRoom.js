@@ -1,5 +1,6 @@
 import React from 'react';
 import UsernameGenerator from 'username-generator';
+import pio from '../assets/chikk.png';
 
 const CreateRoom = (props) => {
   function create() {
@@ -9,7 +10,8 @@ const CreateRoom = (props) => {
 
   return (
     <div className="Create">
-      <h2>PIO Video Chat</h2>  
+      <img src={pio} />
+      <h2> PIO Video Chat</h2>
       <button onClick={create}>Create Room</button>
     </div>
   );
