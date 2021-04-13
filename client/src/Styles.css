@@ -17,7 +17,7 @@ code {
   height: 100vh;
 }
 
-.App button {
+.newRoombtn {
   margin-top: 3vh;
   outline: 0;
   color: #4c3999;
@@ -25,6 +25,7 @@ code {
   font-weight: 600;
   background: #f1f1f1;
   border: none;
+  border-radius: 5px;
   padding: 2em 4em;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
@@ -32,11 +33,11 @@ code {
           box-shadow: inset 0 -8px 0 0 rgba(0, 0, 0, 0.2), 1px 1px 0 0 #4c3999, 2px 2px 0 0 #4c3999, 3px 3px 0 0 #4c3999, 4px 4px 0 0 #4c3999, 5px 5px 0 0 #4c3999, 6px 6px 0 0 #4c3999, 7px 7px 0 0 #4c3999, 8px 8px 0 0 #4c3999, 9px 9px 0 0 #4c3999, 10px 10px 0 0 #4c3999, 11px 11px 0 0 #4c3999, 12px 12px 0 0 #4c3999;
 }
 
-.App button:hover {
+.newRoombtn:hover {
   color: #1da7a8;
 }
 
-.App button:active {
+.newRoombtn:active {
   color: #222;
   -webkit-box-shadow: inset 0 -4px 0 0 rgba(0, 0, 0, 0.2), 1px 1px 0 0 #4c3999, 2px 2px 0 0 #4c3999, 3px 3px 0 0 #4c3999, 4px 4px 0 0 #4c3999, 5px 5px 0 0 #4c3999;
           box-shadow: inset 0 -4px 0 0 rgba(0, 0, 0, 0.2), 1px 1px 0 0 #4c3999, 2px 2px 0 0 #4c3999, 3px 3px 0 0 #4c3999, 4px 4px 0 0 #4c3999, 5px 5px 0 0 #4c3999;
@@ -87,5 +88,17 @@ code {
   width: 50vh;
   height: 50vw;
   border-radius: 5px;
+}
+
+.audiobtn {
+  border-radius: 50px;
+}
+
+.videobtn {
+  border-radius: 50px;
+}
+
+.hangup {
+  border-radius: 50px;
 }
 /*# sourceMappingURL=Styles.css.map */
