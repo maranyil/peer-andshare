@@ -12,7 +12,7 @@ const CreateRoom = (props) => {
     <div className="Create">
       <img src={pio} />
       <h2> PIO Video Chat</h2>
-      <button onClick={create}>Create Room</button>
+      <button className="newRoombtn" onClick={create}>Create Room</button>
     </div>
   );
 };
