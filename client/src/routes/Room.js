@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 import io from 'socket.io-client';
 
 const Room = (props) => {
@@ -9,18 +9,18 @@ const Room = (props) => {
   const socketRef = useRef();
   const otherUser = useRef();
   const userStream = useRef();
+  const senders = useRef([]);
 
   const history = useHistory();
   const [stream, setStream] = useState();
   const [audioMuted, setAudioMuted] = useState(false);
   const [videoMuted, setVideoMuted] = useState(false);
-  const [fullScreen, setFullScreen] = useState(false);
 
   useEffect(() => {
     navigator.mediaDevices
       .getUserMedia({ audio: true, video: true })
       .then((stream) => {
-          setStream(stream);
+        setStream(stream);
         userVideo.current.srcObject = stream;
         userStream.current = stream;
 
@@ -46,10 +46,9 @@ const Room = (props) => {
 
   function callUser(userID) {
     peerRef.current = createPeer(userID);
-    userStream.current
-      .getTracks()
-      .forEach((track) => peerRef.current.addTrack(track, userStream.current));
-  }
+    userStream.current.getTracks()
+    .forEach(track => senders.current.push(peerRef.current.addTrack(track, userStream.current)));
+}
 
   function createPeer(userID) {
     const peer = new RTCPeerConnection({
@@ -68,8 +67,9 @@ const Room = (props) => {
     peer.onicecandidate = handleICECandidateEvent;
     peer.ontrack = handleTrackEvent;
     peer.onnegotiationneeded = () => handleNegotiationNeededEvent(userID);
-
+    peerRef.current = peer;
     return peer;
+    
   }
 
   function handleNegotiationNeededEvent(userID) {
@@ -169,6 +169,15 @@ const Room = (props) => {
       </button>
     );
   }
+
+  // SHARE
+  let ShareBtn;
+  ShareBtn = (
+    <button className="sharebtn" 
+    onClick={() => shareScreen()}>
+      <img alt="share screen"/>
+    </button>
+  );
   // VIDEO
   let VideoBtn;
   if (videoMuted) {
@@ -209,6 +218,16 @@ const Room = (props) => {
     }
   }
 
+  function shareScreen() {
+    navigator.mediaDevices.getDisplayMedia({ cursor: true }).then(stream => {
+        const screenTrack = stream.getTracks()[0];
+        senders.current.find(sender => sender.track.kind === 'video').replaceTrack(screenTrack);
+        screenTrack.onended = function() {
+            senders.current.find(sender => sender.track.kind === "video").replaceTrack(userStream.current.getTracks()[1]);
+        }
+    })
+}
+
   let HangUp;
   HangUp = (
     <button
@@ -223,19 +242,26 @@ const Room = (props) => {
 
   // END CALL
   function endCall() {
+    toggleMuteVideo();
+    socketRef.current.emit('close', {to: otherUser});
     history.push('/');
     document.location.reload();
   }
 
   return (
     <div className="Room">
-      <video className="MyVid" 
-      autoPlay ref={userVideo} />
+      <div className="MyContainer">
+      <video className="MyVid" autoPlay ref={userVideo} />
+      </div>
+      
       {VideoBtn}
       {AudioBtn}
-      {HangUp }
-      <video className="YourVid" autoPlay 
-      ref={partnerVideo} />
+      {ShareBtn}
+      {HangUp}
+      <div className="YourContainer">
+      <video className="YourVid" autoPlay ref={partnerVideo} />
+      </div>
+     
     </div>
   );
 };

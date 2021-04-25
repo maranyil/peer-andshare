@@ -85,20 +85,35 @@ code {
 .MyVid {
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
-  width: 50vh;
-  height: 50vw;
+  width: 40vh;
+  height: 40vw;
   border-radius: 5px;
+}
+
+.YourContainer {
+  width: 60vh;
+  height: 60vh;
+  border-radius: 5px;
+  border: orange, solid, 3px;
 }
 
 .audiobtn {
   border-radius: 50px;
+  padding: 1.2em;
 }
 
 .videobtn {
   border-radius: 50px;
+  padding: 1.2em;
+}
+
+.sharebtn {
+  border-radius: 50px;
+  padding: 1.2em;
 }
 
 .hangup {
   border-radius: 50px;
+  padding: 1.2em;
 }
 /*# sourceMappingURL=Styles.css.map */
